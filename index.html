@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" href="images/logo.png">
+    
+    <script src="java.min.js"></script>
+    <link rel="icon" href="log.jpeg">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flickity.css">
+    <link rel="stylesheet" href="media.css">
+    <title>healthmeds exchange</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+.Navbar-Menu{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(52, 178, 209);
+}
+.menu{
+    width: 100%;
+    height: 80px;
+    position: relative;
+    top: 30px;
+    background-color: #f0f0f0;
+    box-shadow: 2px -1px 10px 2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px -1px 10px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px -1px 10px 2px rgba(0,0,0,0.75);
+}
+.leftside{
+    /* width: 10%; */
+    height: 80px;
+    position: relative;
+    float: left;     
+}
+.leftside img{
+    width: 250px;
+    height: auto;
+    position: absolute;
+    top:-50px;
+    left: 50px;
+}
+.rightside{
+    width: auto;
+    height: 80px;
+    float: right;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    justify-content: right;
+}
+.rightside a{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.9);
+    text-decoration: none;
+    padding: 10px 10px;
+    transition: 0.5s;
+}
+.navicon:hover{
+    color:#7c4a21
+}
+.social{
+    display: inline;
+}
+.menubar{
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    opacity: 0;
+}
+.menubar .line{
+    height: 2px;
+    width: 50px;
+    background-color: black;
+    margin: 5px 0;
+    border-radius: 50px;
+    cursor: pointer;
+    
+}
+#cross{
+    font-size: 23px;
+   color: #fff;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    opacity: 0;
+}
+
+#Border{
+    padding: 13px 0;
+    display: inline;
+    border-right: 1px solid #c37a3e;
+    margin: 0 30px;
+}
+.rightside i{
+    font-size: 18px;
+}
+#Sweet-Bakery{
+    padding: 12px 20px;
+    background-color: #c37a3e;
+    color: #fff;
+    border-radius: 5px;
+
+    transition: 0.5s;
+}
+#Sweet-Bakery:hover{
+    background-color: #7c4a21;
+}
+.heading{
+    position: absolute;
+    right: 5%;
+    bottom: 20%;
+    text-align:right;
+}
+.heading h2{
+    font-size: 50px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.2);
+}
+.heading p{
+    font-size: 14px;
+    padding-bottom: 25px;
+    color: whitesmoke;
+}
+.heading a{
+    padding: 15px 30px;
+    background-color: #c37a3e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.heading a:hover{
+    background-color: #7c4a21;
+}
+.heading i{
+    font-size: 18px;
+    margin-right: 10px;
+    animation: 25s change linear infinite;
+    transition: 0.5s;
+}
+.Scroll-Arrow a i{
+    font-size: 25px;
+    color: #7c4a21;
+    padding: 10px 10px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    transition: 0.5s;
+    z-index: 1000;
+    background-color: transparent;
+    border: 2px solid #7c4a21;
+    background-color: rgba(0,0,0,0.1);
+    font-weight: 500;
+}
+@keyframes change{
+    0%{
+        color: #c37a3e;
+    }
+    20%{
+        color: purple;
+    }
+    40%{
+        color: yellow;
+    }
+    60%{
+        color: teal;
+    }
+    80%{
+        color: #fff;
+    }
+    100%{
+        color: #000;
+    }
+}
+
+
+
+.second-Sec{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 100px 50px;
+    background-color: rgb(30, 124, 171);
+}
+.second-Sec img{
+    background-attachment: fixed;
+}
+.second-Sec h2{
+    text-align: left;
+    font-size: 35px;
+    padding-bottom: 20px;
+} 
+.second-Sec p{
+    font-size: 18px;
+    color: rgba(0,0,0,0.6);
+    padding-bottom: 25px;
+}
+#Welcome{
+    text-align: left;
+    font-size: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #c37a3e;
+    display: inline-block; 
+}
+.second-Sec a{
+    padding: 15px 30px;
+    background-color: #c37a3e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.second-Sec a:hover{
+    background-color: #7c4a21;
+}
+.second-sec{
+    margin: 30px 0;
+}
+
+.MenuSection{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 100px 0;
+}
+.MenuSection img{
+    height: 300px;
+    margin: 20px 0px;
+}
+.MenuSection h1{
+    font-size: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #c37a3e;
+    display: inline-block;
+}
+.MenuSection p{
+    font-size: 18px;
+    color: rgba(0,0,0,0.6);
+    padding: 25px 0;   
+}
+.Bakery-menu{
+    margin-top: 30px;
+}
+.Bakery-menu h3{
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #c37a3e;
+    text-align: left;
+    font-weight: bold;
+}
+.Bakery-menu h6{
+    padding: 10px 0px 5px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+}
+#Weight{
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    font-weight: lighter;
+}
+.Bakery-menu a{
+    float: right;
+    margin-right: 30px;
+    padding: 5px 13px;
+    background-color: #c37a3e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.Bakery-menu a:hover{
+    background-color: #7c4a21;
+}
+
+
+.Gallery{
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    text-align: center;
+    background-color: rgb(69, 192, 216);
+}
+.Gallery img{
+    width: 350px;
+    height: 400px;
+    margin: 1px;
+    transition: 0.8s;
+}
+.Gallery h1{
+    font-size: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #c37a3e;
+    display: inline-block;
+}
+.Gallery p{
+    font-size: 18px;
+    color: rgba(0,0,0,0.6);
+    padding: 25px 0;   
+}
+.carousel-cell{
+    width: 340px;
+    height: 400px;
+    overflow: hidden;
+    margin: 0px;
+}
+.Gallery a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    position: relative;
+    top: -60px;
+    color: #fff;
+    padding: 5px 13px;
+    border: 2px solid #7c4a21;
+    background-color: transparent;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+.Gallery a:hover{
+    background-color: #c37a3e;
+    border: none;
+}
+.Gallery img:hover{
+    transform: scale(1.01);
+}
+
+.Feedback{
+    width: 100%;
+    height: auto;
+    padding: 50px 0 0 0;
+    text-align: center;
+    margin: 0;
+}
+.Feedback h1{
+    font-size: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #c37a3e;
+    display: inline-block;
+} 
+.Feedback p{
+    font-size: 18px;
+    color: rgba(0,0,0,0.6);
+    padding-bottom: 25px;
+}
+.feedback-background{
+    width: 100%;
+    height: 60vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://media.istockphoto.com/photos/homemade-sweet-chocolate-cupcakes-picture-id615286712?k=20&m=615286712&s=612x612&w=0&h=YQkiXhBHecMn1Oi2228WL0KmVC9KHCTriP8vB49OGHk=');
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+    
+}
+.center-heading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.center-heading p{
+    font-size: 30px;
+    color: #fff;
+}
+.center-heading a{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    transition: 0.5s;
+    background-color: #c37a3e;
+}
+.center-heading a:hover{
+    background-color: #7c4a21;
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: rgba(0,0,0,0.1);
+    padding: 50px 0  0 0;
+    text-align: center;
+}
+.footer h3{
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c37a3e;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+.footer p{
+    font-size: 15px;
+    color: rgba(0,0,0,0.5);
+    font-weight: lighter;
+    padding: 0 10px;
+}
+.footer i{
+    padding: 10px;
+    font-size: 22px;
+    color: rgba(0,0,0,0.8);
+    transition: 0.6s;
+}
+.footer i:hover{
+    color: #7c4a21;
+}
+
+.Copyright h4{
+    font-size: 18px;
+    line-height: 100px;
+}
+#Name{
+    color: rgba(0,0,0,0.8);
+    font-weight: bold;
+}
+#last-logo{
+    font-size: 30px;
+    font-style: italic;
+    display: inline-block;
+    color: #c37a3e;
+    font-weight: bold;
+}
+.Navbar-Menu {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(35, 190, 196);
+}
+
+.second-Sec {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 100px 50px;
+    background-color: rgb(69, 178, 225);
+}
+
+.Gallery {
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    text-align: center;
+    background-color: rgb(67, 207, 220);
+}
+
+</style>
+<body>
+
+    <section class="Navbar-Menu" id="Navbar-Menu-Id">
+        <div class="menu">
+            <div class="leftside">
+                <img src="log.jpeg" alt="log.jpeg">
+            </div>
+            <div class="rightside" id="rightside">
+                <nav class="Icons">
+                    
+                    <a href="login.html" class="navicon">Login</a>
+                    <a href="details.html" class="navicon">About Us</a>
+                    <a href="trans.html" class="navicon">Transaction</a>
+                    <a href="buy page.html" class="navicon">buy</a>
+                    <a href="transaction.html" class="navicon">Donate</a>
+                    <a href="location.html" class="navicon">Location</a>
+                    <a href="Feedback.html" class="navicon">Feedback</a>
+                    <a href="compare.html" class="navicon">Compare </a>
+                    
+                    
+                    
+                    <i class="fas fa-times-circle" id="cross" onclick="Hidemenu()"></i>
+
+                    <div class="social">
+                        <li id="Border"></li>
+                        <a href="https://www.facebook.com/" target="blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </nav>
+            </div>
+            <div class="menubar" >
+                <div class="line" onclick="Togglebar()"></div>
+                <div class="line" onclick="Togglebar()"></div>
+                <div class="line" onclick="Togglebar()"></div>
+            </div>
+        </div>
+        <div class="heading" >
+            <h2>WELCOME TO HEALTHMEDS EXCHANGE</h2>
+            <br>
+            <br>
+            <a href="C:\Users\acs\Desktop\new\feedback.html"><i class="fal fa-phone-rotary"></i>Contact Us</a>
+        </div>
+        <div class="Scroll-Arrow" id="topbutton">
+            <a href="#"><i class="fal fa-arrow-up"></i></a>
+         </div>
+    </section>
+
+</html>
